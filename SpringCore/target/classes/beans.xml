@@ -1,0 +1,45 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+
+<beans xmlns = "http://www.springframework.org/schema/beans"
+   xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation = "http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+   
+   
+   <bean id="productobj" class="com.spring.springcore.SpringCore.Product">
+	   <property name="productid" value="101"/>
+	   <property name="productname" value="Laptop"/>
+	   <property name="price" value="80000"/>
+   </bean>
+   
+   <bean id="employeeobj" class="com.spring.springcore.SpringCore.Employee">
+   
+   <property name="empid" value="100" />
+   <property name="empname" value="John" />
+   <property name="salary" value="100000" />
+   
+   </bean>
+   
+   <bean id = "productobj1" class="com.spring.springcore.SpringCore.Product">
+   <constructor-arg index="0" value="102" />
+   <constructor-arg index="1" value="Mouse" />
+   <constructor-arg index="2" value="9000" />
+   
+   </bean>
+   
+   <bean id = "cart1" class="com.spring.springcore.SpringCore.Cart">
+   <property name="cart_id" value="1" />
+   <property name="cart_name" value="Mycart" />
+   <property name="prod" ref="productobj1" />
+   
+   </bean>
+   
+   <bean id = "depobj" class ="com.spring.springcore.SpringCore.Department">
+   
+   <property name="deptid" value="101" />
+   <property name = "deptname" value ="HR" />
+   <property name= "empobj" ref = "employeeobj" />
+   
+   </bean>
+
+</beans>
